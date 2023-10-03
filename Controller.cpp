@@ -11,7 +11,7 @@ void Controller::invokeUserSelection() const {
             startGame();
             break;
         case Model::MenuOptions::QUIT:
-            return;
+            exit(0);
     }
 }
 
