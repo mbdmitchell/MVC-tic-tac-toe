@@ -21,10 +21,11 @@ public:
     virtual void viewIntroduction() const = 0;
     [[nodiscard]] static Model::RowsCols getMove();
     static void printError(std::string_view e);
-    static void displayGameResult(const Model::GameCondition& gameCondition, const Player& playerWithCurrentTurn);
+    static void displayGameResult(const Model::GameCondition& gameCondition);
     static void displayEndOfGameMessage();
     static Model::MenuOptions displayMenuOptions();
     virtual ~ViewBase() = default;
+
 };
 
 

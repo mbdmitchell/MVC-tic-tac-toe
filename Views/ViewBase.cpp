@@ -23,18 +23,17 @@ void ViewBase::printError(std::string_view e) {
     std::cout << "Error: " << e << ". (Try again.)" << std::endl;
 }
 
-void ViewBase::displayGameResult(const Model::GameCondition &gameCondition, const Player &playerWithCurrentTurn) {
-    using namespace std::string_literals;
-
+void ViewBase::displayGameResult(const Model::GameCondition &gameCondition) {
     switch (gameCondition) {
         case Model::GameCondition::DRAW:
             std::cout << "It's a draw\n";
             break;
-        case Model::GameCondition::WIN: {
-            const auto winner = (playerWithCurrentTurn.getType() == Piece::Type::O) ? "X"s : "O"s;
-            std::cout << std::format("{} Wins!\n", winner);
+        case Model::GameCondition::WIN_O:
+            std::cout << "O Wins!\n";
             break;
-        }
+        case Model::GameCondition::WIN_X:
+            std::cout << "X Wins!\n";
+            break;
         case Model::GameCondition::ONGOING:
             std::cout << "The game is still ongoing\n";
             break;
