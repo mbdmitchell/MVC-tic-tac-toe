@@ -22,11 +22,11 @@ bool Model::thereExistsARowMatchHelper(const std::array<std::optional<Piece>, 3>
 }
 
 bool Model::thereExistsAColumnMatch() const {
-    auto columnMatching = [&](const size_t index) {
-        return (board[index][0] == board[index][1] && board[index][1] == board[index][2]);
+    auto columnMatching = [&](const size_t col) {
+        return (board[0][col] == board[1][col] && board[1][col] == board[2][col]);
     };
-    for (size_t index = 0; index != board.size(); ++index) {                   // TODO: investigate: != faster for iterator, faster here??
-        if (columnMatching(index) && board[index][0].has_value()) {
+    for (size_t col = 0; col < board.size(); ++col) {
+        if (columnMatching(col) && board[0][col].has_value()) {
             return true;
         }
     }
