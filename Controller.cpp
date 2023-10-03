@@ -25,7 +25,7 @@ void Controller::startGame() const {
         }
         view->viewBoard(model->getBoard());
     }
-    view->displayGameResult(model->getGameCondition(), model->getCurrentPlayer());
+    view->displayGameResult(model->getGameCondition());
     view->displayEndOfGameMessage();
 }
 

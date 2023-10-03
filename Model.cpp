@@ -57,10 +57,11 @@ Model::MenuOptions Model::charToMenuOption(const char c) {
 }
 
 Model::GameCondition Model::getGameCondition() const {
-    if (thereExistsARowMatch()
-        || thereExistsAColumnMatch()
-        || thereExistsADiagonalMatch()) {
-        return GameCondition::WIN;
+    if (thereExistsARowMatch() || thereExistsAColumnMatch() || thereExistsADiagonalMatch()) {
+        if (getCurrentPlayer().getType() == Piece::Type::X) {
+            return GameCondition::WIN_O;
+        }
+        return GameCondition::WIN_X;
     }
     if (isFull()) {
         return GameCondition::DRAW;
