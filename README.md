@@ -2,6 +2,8 @@
 
 MVC-tic-tac-toe is an implementation of the classic game of tic-tac-toe using the Model-View-Controller (MVC) design pattern. This design pattern separates the application into three interconnected components to promote modularity and maintainability.
 
+>NB: For a less trivial program, see ![[https://github.com/mbdmitchell/MCV-chess]]
+
 ## Views
 
 To demonstrate the MVC pattern in action, this project provides two different views: ViewSimple and ViewComplex. Thanks to the MVC architecture, these views can be used interchangeably.
